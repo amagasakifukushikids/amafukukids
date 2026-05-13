@@ -1,1 +1,410 @@
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- ナビ -->
+<nav class="navbar">
+
+  <div class="nav-left">
+
+    <button class="active"
+    onclick="showPage('home', event)">
+      ホーム
+    </button>
+
+    <button onclick="showPage('members', event)">
+      活動メンバー
+    </button>
+
+    <button onclick="showPage('reports', event)">
+      活動報告
+    </button>
+
+    <button onclick="showPage('news', event)">
+      お知らせ
+    </button>
+
+    <button onclick="showPage('history', event)">
+      更新履歴
+    </button>
+
+  </div>
+
+  <div class="nav-right">
+    あまがさき福祉キッズ
+  </div>
+
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+  <!-- 流れる写真 -->
+  <div class="scroll-wrapper">
+
+    <div class="scroll-track" id="scrollTrack">
+
+      <img
+      class="scroll-img"
+      src="https://via.placeholder.com/300x180">
+
+      <img
+      class="scroll-img"
+      src="https://via.placeholder.com/300x180">
+
+      <img
+      class="scroll-img"
+      src="https://via.placeholder.com/300x180">
+
+      <img
+      class="scroll-img"
+      src="https://via.placeholder.com/300x180">
+
+    </div>
+
+  </div>
+
+  <header>
+
+    <h1>あまがさき福祉キッズ</h1>
+
+    <p>
+      尼崎をもっと良くするために
+      子どもが主体となって活動しています。
+    </p>
+
+  </header>
+
+  <!-- 活動 -->
+  <section class="fade">
+
+    <h2>活動について</h2>
+
+    <p>
+      掃除やイベントなど様々な活動を行っています。
+    </p>
+
+  </section>
+
+  <!-- 日付 -->
+  <section class="fade date-section">
+
+    <p id="today-date"></p>
+
+  </section>
+
+  <!-- ひとこと -->
+  <section class="fade">
+
+    <div class="word-header">
+
+      <button
+      class="month-btn"
+      onclick="changeMonth(-1)">
+        ←
+      </button>
+
+      <h2 id="month-title">
+        2026年5月のひとこと
+      </h2>
+
+      <button
+      class="month-btn"
+      onclick="changeMonth(1)">
+        →
+      </button>
+
+    </div>
+
+    <div class="word-box"
+    id="word-box">
+
+      準備中です
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq fade">
+
+    <h2>ヘルプ（よくある質問）</h2>
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        <span>
+          誰でも参加できますか？
+        </span>
+
+        <span class="icon">+</span>
+
+      </button>
+
+      <div class="faq-answer">
+
+        はい、地域の子どもを中心に
+        誰でも参加できます。
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="contact fade">
+
+    <h2>お問い合わせ</h2>
+
+    <p>
+      TEL：123-4567-8901
+    </p>
+
+  </section>
+
+  <!-- 応援 -->
+  <section class="support-section fade">
+
+    <h2>応援・ご要望</h2>
+
+    <button id="supportBtn"
+    class="support-btn">
+
+      💌 応援・ご要望はこちら
+
+    </button>
+
+  </section>
+
+  <!-- SNS -->
+  <footer class="footer">
+
+    <h3>SNS</h3>
+
+    <div class="sns-links">
+
+ <a
+href="https://www.instagram.com/amagasakifukushikids/"
+target="_blank">
+
+  <i class="fa-brands fa-instagram"></i>
+  Instagram
+
+</a>
+
+      <a href="#">
+        <i class="fa-brands fa-youtube"></i>
+        YouTube
+      </a>
+
+    </div>
+
+  </footer>
+
+</section>
+
+<!-- MEMBERS -->
+<section id="members" class="page">
+
+  <h2 class="fade">
+    メンバー
+  </h2>
+
+  <div class="members">
+
+    <div
+    class="card fade"
+
+    data-name="まゆ"
+
+    data-role="会長"
+
+    data-img="https://via.placeholder.com/200"
+
+    data-desc="元気に活動しています！"
+
+    data-like="カレー・サッカー">
+
+      <img src="https://via.placeholder.com/200">
+
+      <h3>M</h3>
+
+      <p>会長</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REPORT -->
+<section id="reports" class="page">
+
+  <h2 class="fade">
+    活動報告
+  </h2>
+
+  <div class="report-card fade">
+
+    <h3>2026年5月</h3>
+
+    <p>
+      公園清掃活動を行いました。
+    </p>
+
+  </div>
+
+</section>
+
+<!-- NEWS -->
+<section id="news" class="page">
+
+  <h2 class="fade">
+    お知らせ
+  </h2>
+
+  <p>
+    次回活動日は未定です。
+  </p>
+
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="page">
+
+  <h2 class="fade">
+    更新履歴
+  </h2>
+
+  <div class="report-card fade">
+
+    <p>
+      現在準備中です。
+    </p>
+
+  </div>
+
+</section>
+
+<!-- メンバーモーダル -->
+<div id="modal"
+class="modal">
+
+  <div class="modal-content">
+
+    <span id="close">
+      &times;
+    </span>
+
+    <img id="modal-img">
+
+    <h2 id="modal-name"></h2>
+
+    <p id="modal-role"></p>
+
+    <p id="modal-desc"></p>
+
+    <p id="modal-like"></p>
+
+  </div>
+
+</div>
+
+<!-- 写真モーダル -->
+<div id="imageModal"
+class="modal">
+
+  <div class="image-modal-content">
+
+    <span id="imageClose">
+      &times;
+    </span>
+
+    <img id="popupImage">
+
+  </div>
+
+</div>
+
+<!-- 応援フォーム -->
+<div id="supportModal"
+class="modal">
+
+  <div class="modal-content support-content">
+
+    <span id="supportClose">
+      &times;
+    </span>
+
+    <h2>
+      応援・ご要望フォーム
+    </h2>
+
+    <p class="support-text">
+
+      地域のみなさんの応援や
+      ご要望を募集しています！
+
+    </p>
+
+    <div class="form-wrapper">
+
+      <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdKZeC_oMd-igNINKq0MDJjgwLHBpe2ZW8aWVAWrZnvlaIXYA/viewform?embedded=true"
+
+      width="100%"
+      height="1376"
+
+      frameborder="0"
+
+      marginheight="0"
+      marginwidth="0">
+
+      読み込んでいます…
+
+      </iframe>
+
+    </div>
+
+    <div class="privacy-text">
+
+      <p>
+        ※ご記入いただいた内容は、
+        活動運営やご連絡以外には使用しません。
+      </p>
+
+      <p>
+        ※いただいた応援メッセージは、
+        一部活動紹介などで
+        使用させていただく場合があります。
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- コピー -->
+<footer class="copyright">
+
+  <p>
+    このサイトは
+    地域活動紹介のために
+    運営されています。
+  </p>
+
+  <hr>
+
+  <p>
+    © 2026 あまがさき福祉キッズ
+  </p>
+
+</footer>
+
+<!-- TOP -->
+<button id="topBtn">
+  ↑
+</button>
 
